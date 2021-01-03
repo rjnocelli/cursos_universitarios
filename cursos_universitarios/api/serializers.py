@@ -15,3 +15,10 @@ class CursoSerializador(serializers.ModelSerializer):
     class Meta:
         model = Curso
         fields = '__all__'
+
+class ServidorClienteSuscripcionSerializador(serializers.ModelSerializer):
+    alumno = AlumnoSerializador(many=False)
+    curso = CursoSerializador(many=False)
+    class Meta:
+        model = Suscripcion
+        fields = ["alumno","curso"]

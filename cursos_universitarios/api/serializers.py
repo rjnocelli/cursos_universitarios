@@ -22,3 +22,16 @@ class ServidorClienteSuscripcionSerializador(serializers.ModelSerializer):
     class Meta:
         model = Suscripcion
         fields = ["alumno","curso"]
+
+class ClienteServidorSuscripcionSerializador(serializers.Serializer):
+    alumno_id = serializers.IntegerField()
+    curso_id = serializers.IntegerField()
+
+    def create(self, request):
+        curso = Curso.objects.get(id=request['curso_id'])
+        alumno = Alumno.objects.get(id=request['alumno_id'])
+        try:
+            suscripcion = Suscripcion.objects.get(curso=curso, alumno=alumno)
+        except:
+            suscripcion = Suscripcion.objects.create(curso=curso, alumno=alumno)
+        return suscripcion

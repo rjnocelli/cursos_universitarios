@@ -8,3 +8,10 @@ class Alumno(models.Model):
 
     def __str__(self):
         return f'{self.nombre} {self.apellido}'
+    
+class Curso(models.Model):
+    nombre = models.CharField(max_length=50)
+    descripcion = models.TextField(max_length=100)
+
+    def __str__(self):
+        return f'{self.nombre}'

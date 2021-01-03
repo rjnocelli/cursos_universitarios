@@ -14,6 +14,20 @@ class Alumno(models.Model):
         inscripciones = self.inscripcion_set.all()
         return len(inscripciones)
 
+    @property
+    def obtener_promedio_total(self):
+        inscripciones = self.inscripcion_set.all()
+        total_suma_notas = 0
+        total_inscripciones = 0
+        if inscripciones:
+            for i in inscripciones:
+                if i.calificacion:
+                    total_suma_notas += i.calificacion
+                    total_inscripciones += 1
+        else:
+            total_inscripciones = 1
+        return round((total_suma_notas / total_inscripciones), 2)
+
 class Curso(models.Model):
     nombre = models.CharField(max_length=50)
     descripcion = models.TextField(max_length=100)

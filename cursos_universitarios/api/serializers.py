@@ -35,3 +35,17 @@ class ClienteServidorSuscripcionSerializador(serializers.Serializer):
         except:
             suscripcion = Suscripcion.objects.create(curso=curso, alumno=alumno)
         return suscripcion
+
+class ClienteServidorAgregarCalificacionSerializador(serializers.Serializer):
+    alumno_id = serializers.IntegerField()
+    curso_id = serializers.IntegerField()
+    calificacion = serializers.DecimalField(max_digits=4, decimal_places=2)
+
+    def create(self, request):
+        curso = Curso.objects.get(id=request['curso_id'])
+        alumno = Alumno.objects.get(id=request['alumno_id'])
+        calificacion = request['calificacion']
+        suscripcion = Suscripcion.objects.get(curso=curso, alumno=alumno)
+        suscripcion.calificacion = calificacion
+        suscripcion.save()
+        return suscripcion

@@ -27,6 +27,15 @@ class Alumno(models.Model):
         else:
             total_inscripciones = 1
         return round((total_suma_notas / total_inscripciones), 2)
+    
+    @property
+    def obtener_cantidad_cursos_aprobados(self):
+        total = 0
+        inscripciones = self.inscripcion_set.all()
+        for i in inscripciones:
+            if i.calificacion and i.calificacion >= 7:
+                total += 1
+        return total
 
 class Curso(models.Model):
     nombre = models.CharField(max_length=50)

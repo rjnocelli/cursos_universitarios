@@ -9,3 +9,9 @@ class AlumnoSerializador(serializers.ModelSerializer):
     class Meta:
         model = Alumno
         fields = '__all__'
+
+class CursoSerializador(serializers.ModelSerializer):
+    alumnos_suscriptos = serializers.IntegerField(source='obtener_cantidad_alumnos_suscriptos')
+    class Meta:
+        model = Curso
+        fields = '__all__'

@@ -43,6 +43,14 @@ class Curso(models.Model):
 
     def __str__(self):
         return f'{self.nombre}'
+    
+    @property
+    def obtener_cantidad_alumnos_suscriptos(self):
+        total = 0
+        inscripciones = self.inscripcion_set.all()
+        for i in inscripciones:
+            total += 1
+        return total
 
 class Suscripcion(models.Model):
     curso = models.ForeignKey("Curso", verbose_name="Curso", on_delete=models.CASCADE)

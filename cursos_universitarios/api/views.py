@@ -5,7 +5,8 @@ from rest_framework.response import Response
 from rest_framework import generics, viewsets, status
 from rest_framework.views import APIView
 from cursos.models import Alumno, Curso, Suscripcion
-from .serializers import AlumnoSerializador, CursoSerializador, CrearSuscripcion, ClientToServerInscripcion, ClienteAServidorCalificacion
+from .serializers import (AlumnoSerializador, CursoSerializador, ServidorClienteSuscripcionSerializador, 
+                        ClienteServidorSuscripcionSerializador, ClienteServidorAgregarCalificacionSerializador)
 
 @api_view(['GET'])
 def api_vistas(request):
@@ -14,7 +15,7 @@ def api_vistas(request):
         'cursos-lista': '/cursos-lista/',
         'curso-detalles': '/curso/<curso_id>/',
         'curso-suscriptores-csv': 'curso/<curso_id>/imprimir-lista-alumnos/',
-        'suscripcion': '/suscripcion/',
+        'suscripcion (CRUD)': '/suscripcion/',
     }
     return Response(api_urls)
 

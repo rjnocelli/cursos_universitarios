@@ -11,28 +11,28 @@ class Alumno(models.Model):
     
     @property
     def obtener_cantidad_total_de_cursos(self):
-        inscripciones = self.inscripcion_set.all()
-        return len(inscripciones)
+        suscripciones = self.suscripcion_set.all()
+        return len(suscripciones)
 
     @property
     def obtener_promedio_total(self):
-        inscripciones = self.inscripcion_set.all()
+        suscripciones = self.suscripcion_set.all()
         total_suma_notas = 0
-        total_inscripciones = 0
-        if inscripciones:
-            for i in inscripciones:
+        total_suscripciones = 0
+        if suscripciones:
+            for i in suscripciones:
                 if i.calificacion:
                     total_suma_notas += i.calificacion
-                    total_inscripciones += 1
+                    total_suscripciones += 1
         else:
-            total_inscripciones = 1
-        return round((total_suma_notas / total_inscripciones), 2)
+            total_suscripciones = 1
+        return round((total_suma_notas / total_suscripciones), 2)
     
     @property
     def obtener_cantidad_cursos_aprobados(self):
         total = 0
-        inscripciones = self.inscripcion_set.all()
-        for i in inscripciones:
+        suscripciones = self.suscripcion_set.all()
+        for i in suscripciones:
             if i.calificacion and i.calificacion >= 7:
                 total += 1
         return total
@@ -47,8 +47,8 @@ class Curso(models.Model):
     @property
     def obtener_cantidad_alumnos_suscriptos(self):
         total = 0
-        inscripciones = self.inscripcion_set.all()
-        for i in inscripciones:
+        suscripciones = self.suscripcion_set.all()
+        for i in suscripciones:
             total += 1
         return total
 

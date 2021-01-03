@@ -17,3 +17,9 @@ def api_vistas(request):
         'suscripcion': '/suscripcion/',
     }
     return Response(api_urls)
+
+@api_view(['GET'])
+def obtener_lista_alumnos(request):
+    alumnos = Alumno.objects.all()
+    serializer = AlumnoSerializador(alumnos, many=True)
+    return Response(serializer.data)

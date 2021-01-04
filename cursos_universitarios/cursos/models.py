@@ -24,7 +24,7 @@ class Alumno(models.Model):
                 if i.calificacion:
                     total_suma_notas += i.calificacion
                     total_suscripciones += 1
-        else:
+        if total_suscripciones == 0:
             total_suscripciones = 1
         return round((total_suma_notas / total_suscripciones), 2)
     

@@ -12,7 +12,7 @@ class ServidorClienteAlumnoSerializador(serializers.ModelSerializer):
         model = Alumno
         fields = '__all__'
 
-class ClienteServidorAlumnosSerializadorClienteServidor(serializers.ModelSerializer):
+class ClienteServidorAlumnosSerializador(serializers.ModelSerializer):
 
     class Meta:
         model = Alumno

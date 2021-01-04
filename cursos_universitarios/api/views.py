@@ -24,3 +24,15 @@ def obtener_lista_alumnos(request):
     alumnos = Alumno.objects.all()
     serializer = AlumnoSerializador(alumnos, many=True)
     return Response(serializer.data)
+
+@api_view(['GET'])
+def obtener_lista_cursos(request):
+    cursos = Curso.objects.all()
+    serializer = CursoSerializador(cursos, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def obtener_curso(request, curso_id):
+    curso = Curso.objects.get(id = curso_id)
+    serializer = CursoSerializador(curso)
+    return Response(serializer.data)

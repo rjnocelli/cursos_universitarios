@@ -66,3 +66,21 @@ class SuscripcionModelViewSet(APIView):
         suscripcion = Suscripcion.objects.all().filter(alumno__id=alumno_id).filter(curso__id=curso_id)
         suscripcion.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+def imprimir_listado_alumnos(request, curso_id):
+    import csv
+    if request.method == "GET":
+        curso = Curso.objects.get(id=curso_id)
+        suscripciones = curso.suscripcion_set.all()
+
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = f'attachment; filename="{curso.nombre}-inscriptos.csv"'
+        
+        writer = csv.writer(response)
+        writer.writerow(['Alumnos','Curso',])
+        for i in range(0, len(suscripciones)):
+            alumno = f'{suscripciones[i].alumno.nombre} {suscripciones[i].alumno.apellido}'
+            writer.writerow([alumno, curso.nombre])
+        return response
+    else:
+        return HttpResponse('Error')

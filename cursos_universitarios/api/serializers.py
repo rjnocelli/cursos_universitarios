@@ -12,7 +12,7 @@ class ServidorClienteAlumnoSerializador(serializers.ModelSerializer):
         model = Alumno
         fields = '__all__'
 
-class ClienteServidorAlumnosSerializador(serializers.ModelSerializer):
+class ClienteServidorAlumnoSerializador(serializers.ModelSerializer):
 
     class Meta:
         model = Alumno
@@ -27,7 +27,7 @@ class CursoSerializador(serializers.ModelSerializer):
         fields = '__all__'
 
 class ServidorClienteSuscripcionSerializador(serializers.ModelSerializer):
-    alumno = AlumnoSerializador(many=False)
+    alumno = ServidorClienteAlumnoSerializador(many=False)
     curso = CursoSerializador(many=False)
     class Meta:
         model = Suscripcion

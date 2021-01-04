@@ -5,8 +5,10 @@ from rest_framework.response import Response
 from rest_framework import generics, viewsets, status
 from rest_framework.views import APIView
 from cursos.models import Alumno, Curso, Suscripcion
-from .serializers import (AlumnoSerializador, CursoSerializador, ServidorClienteSuscripcionSerializador, 
-                        ClienteServidorSuscripcionSerializador, ClienteServidorAgregarCalificacionSerializador)
+from .serializers import (ServidorClienteAlumnoSerializador, ClienteServidorAlumnoSerializador, CursoSerializador,
+                         ServidorClienteSuscripcionSerializador, ClienteServidorSuscripcionSerializador,
+                         ClienteServidorAgregarCalificacionSerializador)
+                        
 
 @api_view(['GET'])
 def api_vistas(request):
@@ -20,12 +22,6 @@ def api_vistas(request):
     return Response(api_urls)
 
 @api_view(['GET'])
-def obtener_lista_alumnos(request):
-    alumnos = Alumno.objects.all()
-    serializer = AlumnoSerializador(alumnos, many=True)
-    return Response(serializer.data)
-
-@api_view(['GET'])
 def obtener_lista_cursos(request):
     cursos = Curso.objects.all()
     serializer = CursoSerializador(cursos, many=True)
@@ -37,7 +33,36 @@ def obtener_curso(request, curso_id):
     serializer = CursoSerializador(curso)
     return Response(serializer.data)
 
-class SuscripcionModelViewSet(APIView):
+class AlumnoViewSet(APIView):
+
+    def get(self, request, **kwargs):
+        if kwargs:
+            query = Alumno.objects.get(id=kwargs['alumno_id'])
+            serializer = ServidorClienteAlumnoSerializador(query)
+        else:
+            query = Alumno.objects.all()
+            serializer = ServidorClienteAlumnoSerializador(query, many=True)
+        return Response(serializer.data)
+    
+    def post(self, request):
+        serializer = ClienteServidorAlumnoSerializador(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    def put(self, request, **kwargs):
+        alumno = Alumno.objects.get(id=kwargs['alumno_id'])
+        serializer = ClienteServidorAlumnoSerializador(alumno, data = request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class SuscripcionViewSet(APIView):
     
     def get(self, request):
         query = Suscripcion.objects.all()

@@ -20,15 +20,22 @@ class ClienteServidorAlumnoSerializador(serializers.ModelSerializer):
 
 # Serializadores para clase Curso
 
-class CursoSerializador(serializers.ModelSerializer):
+class ServidorClienteCursoSerializador(serializers.ModelSerializer):
     alumnos_suscriptos = serializers.IntegerField(source='obtener_cantidad_alumnos_suscriptos')
     class Meta:
         model = Curso
         fields = '__all__'
+    
+class ClienteServidorCursoSerializador(serializers.ModelSerializer):
+    class Meta:
+        model = Curso
+        fields = '__all__'
+
+# Serializadores para clase Suscripcion
 
 class ServidorClienteSuscripcionSerializador(serializers.ModelSerializer):
     alumno = ServidorClienteAlumnoSerializador(many=False)
-    curso = CursoSerializador(many=False)
+    curso = ServidorClienteCursoSerializador(many=False)
     class Meta:
         model = Suscripcion
         fields = ["alumno","curso"]

@@ -38,7 +38,7 @@ def obtener_curso(request, curso_id):
     return Response(serializer.data)
 
 class SuscripcionModelViewSet(APIView):
-
+    
     def get(self, request):
         query = Suscripcion.objects.all()
         serializer = ServidorClienteSuscripcionSerializador(query, many=True)

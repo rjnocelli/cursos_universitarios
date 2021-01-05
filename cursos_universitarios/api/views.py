@@ -9,7 +9,6 @@ from .serializers import (ServidorClienteAlumnoSerializador, ClienteServidorAlum
                          ClienteServidorCursoSerializador, ServidorClienteSuscripcionSerializador, ClienteServidorSuscripcionSerializador,
                          ClienteServidorAgregarCalificacionSerializador)
                         
-
 @api_view(['GET'])
 def api_vistas(request):
     api_urls = {
@@ -17,7 +16,7 @@ def api_vistas(request):
         'alumnos-id': '/alumnos/<alumno_id>/',
         'cursos-lista': '/cursos/',
         'cursos-id': '/cursos/<curso_id>/',
-        'curso-suscriptores-csv': 'curso/<curso_id>/imprimir-lista-alumnos/',
+        'curso-suscriptores-csv': '/cursos/<curso_id>/imprimir-lista-alumnos/',
         'suscripcion (CRUD)': '/suscripcion/',
     }
     return Response(api_urls)
@@ -49,6 +48,11 @@ class AlumnoViewSet(APIView):
             return Response(serializer.data)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, **kwargs):
+        alumno = Alumno.objects.get(id=kwargs['alumno_id'])
+        alumno.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 class CursoViewSet(APIView):
 

@@ -8,7 +8,7 @@ urlpatterns = [
     path('cursos/', views.CursoViewSet.as_view(), name='cursos-lista'),
     path('cursos/<curso_id>/', views.CursoViewSet.as_view(), name='curso'),
     path('suscripcion/', views.SuscripcionViewSet.as_view(), name='suscripcion'),
-    path('curso/<curso_id>/imprimir-lista-alumnos/', views.imprimir_listado_alumnos, name='imprimir-listado-alumnos'),
+    path('cursos/<curso_id>/imprimir-lista-alumnos/', views.imprimir_listado_alumnos, name='imprimir-listado-alumnos'),
 
 ]
 

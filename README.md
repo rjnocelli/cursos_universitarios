@@ -2,7 +2,7 @@
 
 Proyecto para entrevista de trabajo. Construccion de Rest API con DRF para un sistema de administracion de cursos universitarios.
 
-- Comando para construir la image de Docker:
+- Comando para construir la imagen de Docker:
 
 docker build -t cursos_universitarios -f Dockerfile .
 

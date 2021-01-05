@@ -1,7 +1,14 @@
-asgiref @ file:///tmp/build/80754af9/asgiref_1605055780383/work
+asgiref 
 certifi==2020.12.5
-Django @ file:///tmp/build/80754af9/django_1606860386887/work
+Django
 djangorestframework==3.12.2
-psycopg2 @ file:///opt/concourse/worker/volumes/live/ba6afed2-743d-4eab-7fd9-80d08764582a/volume/psycopg2_1608147600870/work
-pytz @ file:///tmp/build/80754af9/pytz_1608922264688/work
-sqlparse @ file:///tmp/build/80754af9/sqlparse_1602184451250/work
+psycopg2 
+pytz 
+sqlparse 
+asgiref
+et-xmlfile==1.0.1
+gunicorn==20.0.4
+jdcal==1.4.1
+openpyxl==3.0.5
+Pillow==8.1.0
+

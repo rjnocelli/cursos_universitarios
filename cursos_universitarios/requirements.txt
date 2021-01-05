@@ -1,8 +1,7 @@
 asgiref 
 certifi==2020.12.5
 Django
-djangorestframework==3.12.2
-psycopg2 
+djangorestframework==3.12.2 
 pytz 
 sqlparse 
 asgiref

@@ -81,6 +81,11 @@ class CursoViewSet(APIView):
             return Response(serializer.data)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    def delete(self, request, **kwargs):
+        curso = Curso.objects.get(id=kwargs['curso_id'])
+        curso.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 class SuscripcionViewSet(APIView):
     

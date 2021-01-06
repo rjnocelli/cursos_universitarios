@@ -17,9 +17,9 @@ https://github.com/rjnocelli/cursos_universitarios.git
 
 docker build -t cursos_universitarios -f Dockerfile .
 
-- Correr la imagen de Docker en puerto remoto 8888:
+- Correr la imagen de Docker puerto 8888 en puerto local 80:
 
-docker run -it -p 80:8888 cursos_universitarios
+docker run -it -p 80:8888 --name cursos_uni_app cursos_universitarios 
 
 - Abrir aplicacion en localhost
 

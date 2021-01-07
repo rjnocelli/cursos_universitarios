@@ -7,19 +7,23 @@ Requisitos
 - Python 3
 - Docker
 
-Build
+<h1> Build </h1>
 
-- Copiar repositorio en directorio seleccionado y CD al mismo
+- Copiar repositorio en directorio seleccionado
 
-https://github.com/rjnocelli/cursos_universitarios.git
+"""git clone https://github.com/rjnocelli/cursos_universitarios.git"""
+
+- CD al directorio del proyecto
+
+"""cd cursos_universitarios"""
 
 - Comando para construir la imagen de Docker:
 
-docker build -t cursos_universitarios -f Dockerfile .
+"""docker build -t cursos_universitarios -f Dockerfile ."""
 
 - Correr la imagen de Docker puerto 8888 en puerto local 80:
 
-docker run -it -p 80:8888 --name cursos_uni_app cursos_universitarios 
+"""docker run -it -p 80:8888 --name cursos_uni_app cursos_universitarios"""
 
 - Abrir aplicacion en localhost
 

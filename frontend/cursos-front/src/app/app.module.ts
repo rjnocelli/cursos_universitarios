@@ -6,6 +6,7 @@ import { AccionesDisponiblesComponenteComponent } from './acciones-disponibles-c
 import { AgregarAlumnoComponenteComponent } from './agregar-alumno-componente/agregar-alumno-componente.component';
 import { AgregarCursoComponenteComponent } from './agregar-curso-componente/agregar-curso-componente.component';
 import { AlumnoDetallesComponenteComponent } from './alumno-detalles-componente/alumno-detalles-componente.component';
+import { AlumnosListaComponenteComponent } from './alumnos-lista-componente/alumnos-lista-componente.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { AlumnoDetallesComponenteComponent } from './alumno-detalles-componente/
     AccionesDisponiblesComponenteComponent,
     AgregarAlumnoComponenteComponent,
     AgregarCursoComponenteComponent,
-    AlumnoDetallesComponenteComponent
+    AlumnoDetallesComponenteComponent,
+    AlumnosListaComponenteComponent
   ],
   imports: [
     BrowserModule

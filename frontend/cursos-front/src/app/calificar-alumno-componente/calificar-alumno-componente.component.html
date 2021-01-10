@@ -1,1 +1,22 @@
-<p>calificar-alumno-componente works!</p>
+<div class='create-curso-form'>
+    <form  [formGroup]="calificarAlumnoForm" (ngSubmit)="calificarAlumno(calificarAlumnoForm.value)">
+    <h2>Calificar Alumno</h2>
+        <div>
+          <select class="custom-select" formControlName="alumno">
+            <option value="" disabled>Alumno</option>
+            <option *ngFor="let alumno of alumnos" [ngValue]="alumno">{{alumno.nombre}} {{alumno.apellido}}</option>
+         </select>
+          </div>
+          <div>
+            <select class="custom-select" formControlName="curso">
+              <option value="" disabled>Curso</option>
+              <option *ngFor="let curso of cursos" [ngValue]="curso">{{curso.nombre}}</option>
+           </select>
+          </div>
+          <div>
+            <option value="" disabled>Calificacion</option>
+            <input type="number" id="calificacion" formControlName="calificacion">
+          </div>
+        <button class="button" type="submit">Crear</button>
+      </form>
+</div>

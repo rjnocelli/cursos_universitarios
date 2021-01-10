@@ -1,1 +1,17 @@
-<p>agregar-curso-componente works!</p>
+<div class='create-curso-form'>
+    <form  [formGroup]="agregarCursoForm" (ngSubmit)="enviarCursoData(agregarCursoForm.value)">
+    <h2>Agregar Nuevo Curso</h2>
+        <div>
+            <label for="Nombre">
+              Nombre
+            </label>
+            <input id="nombre" type="text" formControlName="nombre">
+          </div><div>
+            <label for="descripcion">
+              Descripcion
+            </label>
+            <textarea id="descripcion" type="text" formControlName="descripcion"></textarea>
+          </div>
+        <button class="button" type="submit">Crear</button>
+      </form>
+  </div>

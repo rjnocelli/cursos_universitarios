@@ -1,1 +1,17 @@
-<p>suscripcion-componente works!</p>
+<div class=''>
+    <form  [formGroup]="suscribirAlumnoForm" (ngSubmit)="suscribirAlumno(suscribirAlumnoForm.value)">
+    <h2>Suscribir Alumno</h2>
+        <div>
+          <select class="custom-select" formControlName="alumno">
+            <option value="" disabled>Alumno</option>
+            <option *ngFor="let alumno of alumnos" [ngValue]="alumno">{{alumno.nombre}} {{alumno.apellido}}</option>
+         </select>
+          </div><div>
+            <select class="custom-select" formControlName="curso">
+              <option value="" disabled>Curso</option>
+              <option *ngFor="let curso of cursos" [ngValue]="curso">{{curso.nombre}}</option>
+           </select>
+          </div>
+        <button class="button" type="submit">Suscribir</button>
+      </form>
+</div>

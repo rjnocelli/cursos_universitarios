@@ -9,6 +9,8 @@ import { AlumnoDetallesComponenteComponent } from './alumno-detalles-componente/
 import { AlumnosListaComponenteComponent } from './alumnos-lista-componente/alumnos-lista-componente.component';
 import { CursoDetallesComponenteComponent } from './curso-detalles-componente/curso-detalles-componente.component';
 import { CursosListaComponenteComponent } from './cursos-lista-componente/cursos-lista-componente.component';
+import { SuscripcionComponenteComponent } from './suscripcion-componente/suscripcion-componente.component';
+import { DesuscripcionComponenteComponent } from './desuscripcion-componente/desuscripcion-componente.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { CursosListaComponenteComponent } from './cursos-lista-componente/cursos
     AlumnoDetallesComponenteComponent,
     AlumnosListaComponenteComponent,
     CursoDetallesComponenteComponent,
-    CursosListaComponenteComponent
+    CursosListaComponenteComponent,
+    SuscripcionComponenteComponent,
+    DesuscripcionComponenteComponent
   ],
   imports: [
     BrowserModule

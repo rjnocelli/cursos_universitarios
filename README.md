@@ -31,8 +31,8 @@ Requisitos
 
 * Bajar servidores
 
-  ```CTRL + c 
-  docker-compose up```
+  ```CTRL + c```
+  ```docker-compose up```
 
   
 

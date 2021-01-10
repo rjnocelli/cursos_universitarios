@@ -30,4 +30,4 @@ RUN pip3 install django-cors-headers
 RUN pipenv install --skip-lock --system --dev
 
 EXPOSE 8080
-CMD gunicorn cursos_universitarios.wsgi:application --bind 0.0.0.0:$PORT
+# CMD gunicorn cursos_universitarios.wsgi:application --bind 0.0.0.0:$PORT

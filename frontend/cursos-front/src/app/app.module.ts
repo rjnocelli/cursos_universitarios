@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AccionesDisponiblesComponenteComponent } from './acciones-disponibles-componente/acciones-disponibles-componente.component';
 import { AgregarAlumnoComponenteComponent } from './agregar-alumno-componente/agregar-alumno-componente.component';
+import { AgregarCursoComponenteComponent } from './agregar-curso-componente/agregar-curso-componente.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AccionesDisponiblesComponenteComponent,
-    AgregarAlumnoComponenteComponent
+    AgregarAlumnoComponenteComponent,
+    AgregarCursoComponenteComponent
   ],
   imports: [
     BrowserModule

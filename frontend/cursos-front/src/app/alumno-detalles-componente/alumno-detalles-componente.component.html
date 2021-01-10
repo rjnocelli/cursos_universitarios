@@ -1,1 +1,10 @@
-<p>alumno-detalles-componente works!</p>
+<div *ngIf='alumno'>
+    <h2>{{ alumno.nombre}} {{ alumno.apellido }}</h2>
+    <ul>
+        <li>Dni: {{ alumno.dni }}</li>
+        <li>Email: {{ alumno.email }}</li>
+        <li>Cantidad de cursos inscripto: {{ alumno.cantidad_de_cursos }}</li>
+        <li>Cantidad de cursos aprobados: {{ alumno.cantidad_de_cursos_aprobados }}</li>
+        <li>Promedio: {{ alumno.promedio }}</li>
+    </ul>
+</div>

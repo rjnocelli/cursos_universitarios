@@ -6,4 +6,4 @@ COPY . .
 RUN npm run build
 
 FROM nginx:1.18-alpine
-COPY --from=build /usr/src/app/dist/frontend/ /usr/share/nginx/html
+COPY --from=build /usr/src/app/dist/ /usr/share/nginx/html

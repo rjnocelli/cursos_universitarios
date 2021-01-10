@@ -114,8 +114,11 @@ class SuscripcionViewSet(APIView):
         alumno_id = request.data.get('alumno_id')
         curso_id = request.data.get('curso_id')
         suscripcion = Suscripcion.objects.all().filter(alumno__id=alumno_id).filter(curso__id=curso_id)
-        suscripcion.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        if suscripcion:
+            suscripcion.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        else:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
 
 def imprimir_listado_alumnos(request, curso_id):
     import csv

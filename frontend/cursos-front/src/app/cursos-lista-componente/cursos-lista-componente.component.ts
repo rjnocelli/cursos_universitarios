@@ -10,7 +10,11 @@ import { ApiServiceService } from '../api.service';
 export class CursosListaComponenteComponent {
   cursos;
 
-  constructor(private api: ApiServiceService) { }
+  constructor(private api: ApiServiceService) {
+
+  this.obtenerCursos();
+
+  }
 
   obtenerCursos = () => {
     this.api.obtenerCursosTodos().subscribe(
@@ -33,5 +37,4 @@ export class CursosListaComponenteComponent {
         console.log(error)
       });
   }
-
 }

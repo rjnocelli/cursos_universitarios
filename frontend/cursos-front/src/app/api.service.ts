@@ -9,7 +9,13 @@ export class ApiServiceService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl = "http://127.0.0.1:80/api/"
+  // url para conectar al api servido por la imagen Docker
+  // baseUrl = "http://127.0.0.1:80/api/"
+
+  // ulr para conectar al api en localhost
+
+  baseUrl = "http://127.0.0.1:8000/api/"
+
   httpHeaders = new HttpHeaders({"Content-Type":"application/json"})
 
   obtenerCursosTodos(): Observable <any>{

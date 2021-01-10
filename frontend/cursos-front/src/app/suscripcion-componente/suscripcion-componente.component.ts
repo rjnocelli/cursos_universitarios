@@ -16,7 +16,14 @@ export class SuscripcionComponenteComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private api: ApiServiceService, 
-              private router: Router) { }
+              private router: Router) { 
+      
+    this.suscribirAlumnoForm = this.formBuilder.group({
+      alumno: '',
+      curso: '',
+    });
+      
+  }
 
   ngOnInit(): void {
     this.api.obtenerAlumnosTodos().subscribe(

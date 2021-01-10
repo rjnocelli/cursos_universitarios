@@ -1,1 +1,165 @@
-/* You can add global styles to this file, and also import other style files */
+.link{
+    display: row;
+    padding: 0px;
+    margin-right: 0;
+  }
+  
+  .eliminar {
+     background-color: red;
+     margin-left: 10px;
+     display: inline;
+  } 
+  
+  li {
+    font-size: 20px;
+    margin: 10px;
+  }
+  
+  ul {
+    display: inline-block;
+    margin: 0;
+    justify-content: space-around;
+  }
+  
+  app-lista-curso-componente {
+    margin-top: 50px;
+    display: inline-block;
+  }
+  
+  app-alumno-detalles-componente {
+    margin-top: 50px;
+  }
+  
+  app-alumno-lista-componente {
+    margin-top: 50px;
+  }
+  
+  #inicio {
+    display: block;
+    margin-top: 15px;
+    font-size: larger;
+  }
+  
+  .main-h1{
+    text-align: center;
+    background-color:rgb(148, 194, 240);
+    padding: 10px;
+    margin: 0px;
+    
+  }
+  
+  /* .create-curso-form {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
+  
+  
+  .alumnos-lista{
+    display: inline-block;
+  }
+  
+  * {
+      font-family: 'Roboto', Arial, sans-serif;
+      color: #616161;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+  body {
+      margin: 0;
+      background-color: antiquewhite;
+    }
+    
+  .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction:row;
+    }
+    
+  router-outlet + *  {
+      padding: 0 16px;
+    }
+    
+    
+  h1 {
+      font-size: 32px;
+    }
+    
+  h2 {
+      font-size: 25px;
+    }
+    
+  h1, h2 {
+      font-weight: lighter;
+    }
+    
+  p {
+      font-size: 18px;
+    }
+    
+    
+  a {
+      cursor: pointer;
+      color: #1976d2;
+      text-decoration: none;
+    }
+    
+  a:hover {
+      opacity: 0.8;
+    }
+    
+    
+  input, .custom-select {
+      font-size: 14px;
+      border-radius: 2px;
+      padding: 8px;
+      margin-bottom: 16px;
+      border: 1px solid #BDBDBD;
+    }
+    
+  label {
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 4px;
+      display: block;
+      text-transform: uppercase;
+    }
+    
+  .button, button {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      border-radius: 2px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+    }
+    
+  .button:hover, button:hover {
+      opacity: 0.8;
+      font-weight: normal;
+    }
+    
+  .button:disabled, button:disabled {
+      opacity: 0.5;
+      cursor: auto;
+    }
+      
+  .fancy-button {
+      background-color: white;
+      color: #1976d2;
+    }
+    
+  .fancy-button i.material-icons {
+      color: #1976d2;
+      padding-right: 4px;
+    }
+    
+    
+  

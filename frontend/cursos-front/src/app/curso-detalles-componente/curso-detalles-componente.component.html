@@ -1,1 +1,5 @@
-<p>curso-detalles-componente works!</p>
+<div *ngIf='curso'>
+    <h2>{{ curso.nombre}}</h2>
+    <p>{{ curso.descripcion }}</p>
+    <p> Alumnos Suscriptos: {{ curso.alumnos_suscriptos }}</p>
+</div>

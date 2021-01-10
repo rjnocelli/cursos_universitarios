@@ -1,10 +1,11 @@
 # cursos_universitarios
 
-Django project for a job interview. Construction of Rest API with DRF for a university courses administration system. 
+University courses administration system built in Django and Angular. API built in DRF plus UI in Angular. Database already populated with instances of "Alumnos" and "Cursos" in order to facilitate testing.
 
 Requirements
 
 - Python 3
+- Angular
 - Docker
 
 <h1> Build </h1>
@@ -17,15 +18,16 @@ Requirements
 
   ```cd cursos_universitarios```
 
-* Build Docker's image:
+* Build Docker's images:
 
-  ```docker build -t cursos_universitarios -f Dockerfile .```
+  ```docker-compose build```
 
-* Run Docker's image 8888 on local port 80:
+* Run Docker's images:
 
-  ```docker run -it -p 80:8888 --name cursos_uni_app cursos_universitarios```
+  ```docker-compose up```
 
-* Open the aplication on localhost:
+* Open API on http://localhost:8080 and Angular UI on http://localhost:8888
 
-  http://localhost
+* Drop servers 
 
+  ```CTRL + C``` ```docker-compose down```

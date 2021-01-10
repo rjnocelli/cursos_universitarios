@@ -1,1 +1,30 @@
-<p>agregar-alumno-componente works!</p>
+<div id='create-alumno-form'>
+    <form  [formGroup]="agregarAlumnoForm" (ngSubmit)="enviarAlumnoData(agregarAlumnoForm.value)">
+    <h2>Agregar Nuevo Alumno</h2>
+        <div>
+            <label for="Nombre">
+              Nombre
+            </label>
+            <input id="nombre" type="text" formControlName="nombre">
+          </div><div>
+            <label for="apellido">
+              Apellido
+            </label>
+            <input id="apellido" type="text" formControlName="apellido">
+          </div>
+          <div>
+            <label for="email">
+              Email
+            </label>
+            <input id="email" type="text" formControlName="email">
+          </div>
+          <div>
+            <label for="dni">
+              Dni
+            </label>
+            <input id="dni" type="text" formControlName="dni">
+          </div>
+    
+        <button class="button" type="submit">Crear</button>
+      </form>
+    </div>

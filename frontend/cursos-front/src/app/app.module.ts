@@ -11,6 +11,7 @@ import { CursoDetallesComponenteComponent } from './curso-detalles-componente/cu
 import { CursosListaComponenteComponent } from './cursos-lista-componente/cursos-lista-componente.component';
 import { SuscripcionComponenteComponent } from './suscripcion-componente/suscripcion-componente.component';
 import { DesuscripcionComponenteComponent } from './desuscripcion-componente/desuscripcion-componente.component';
+import { CalificarAlumnoComponenteComponent } from './calificar-alumno-componente/calificar-alumno-componente.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { DesuscripcionComponenteComponent } from './desuscripcion-componente/des
     CursoDetallesComponenteComponent,
     CursosListaComponenteComponent,
     SuscripcionComponenteComponent,
-    DesuscripcionComponenteComponent
+    DesuscripcionComponenteComponent,
+    CalificarAlumnoComponenteComponent
   ],
   imports: [
     BrowserModule

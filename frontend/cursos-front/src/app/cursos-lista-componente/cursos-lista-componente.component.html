@@ -1,1 +1,11 @@
-<p>cursos-lista-componente works!</p>
+<div class='cursos-lista' >
+    <h2>Cursos Disponibles</h2>
+    <ul>
+        <div  div *ngFor='let curso of cursos'>
+            <li><a [title]="curso.nombre + ' details'" [routerLink]="['/cursos', curso.id]">
+            {{ curso.nombre }}
+            </a><span><button (click)='borrarCurso(curso.id)' class='eliminar'>X</button></span></li>
+        </div>
+    </ul>
+  </div>
+  

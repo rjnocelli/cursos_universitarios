@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiServiceService } from '../api.service';
 
 @Component({
   selector: 'app-acciones-disponibles-componente',
@@ -6,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./acciones-disponibles-componente.component.css']
 })
 export class AccionesDisponiblesComponenteComponent implements OnInit {
-
-  constructor() { }
+  cursos;
+  constructor(private api: ApiServiceService) { }
 
   ngOnInit(): void {
   }

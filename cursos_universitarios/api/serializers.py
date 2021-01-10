@@ -76,7 +76,7 @@ class ClienteServidorAgregarCalificacionSerializador(serializers.Serializer):
         calificacion = request['calificacion']
         suscripcion = Suscripcion.objects.get(curso=curso, alumno=alumno)
         suscripcion.calificacion = calificacion
-        if not 0 < int(calificacion) < 10:
+        if not 0 < int(calificacion) <= 10:
             raise serializers.ValidationError('calificacion debe ser entre 0 y 10')
         else:
             suscripcion.save()

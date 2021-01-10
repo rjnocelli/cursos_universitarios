@@ -12,6 +12,12 @@ class ServidorClienteAlumnoSerializador(serializers.ModelSerializer):
         model = Alumno
         fields = '__all__'
 
+class ServidorClienteAlumnoSerializadorMini(serializers.ModelSerializer):
+
+    class Meta:
+        model = Alumno
+        fields = ('id','nombre','apellido')
+
 class ClienteServidorAlumnoSerializador(serializers.ModelSerializer):
 
     class Meta:
@@ -20,11 +26,17 @@ class ClienteServidorAlumnoSerializador(serializers.ModelSerializer):
 
 # Serializadores para clase Curso
 
+
 class ServidorClienteCursoSerializador(serializers.ModelSerializer):
     alumnos_suscriptos = serializers.IntegerField(source='obtener_cantidad_alumnos_suscriptos')
     class Meta:
         model = Curso
         fields = '__all__'
+
+class ServidorClienteCursoSerializadorMini(serializers.ModelSerializer):
+    class Meta:
+        model = Curso
+        fields = ('nombre','id',)
     
 class ClienteServidorCursoSerializador(serializers.ModelSerializer):
     class Meta:
@@ -64,5 +76,8 @@ class ClienteServidorAgregarCalificacionSerializador(serializers.Serializer):
         calificacion = request['calificacion']
         suscripcion = Suscripcion.objects.get(curso=curso, alumno=alumno)
         suscripcion.calificacion = calificacion
-        suscripcion.save()
-        return suscripcion
+        if not 0 < int(calificacion) < 10:
+            raise serializers.ValidationError('calificacion debe ser entre 0 y 10')
+        else:
+            suscripcion.save()
+            return suscripcion

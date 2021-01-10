@@ -8,6 +8,7 @@ import { AgregarCursoComponenteComponent } from './agregar-curso-componente/agre
 import { AlumnoDetallesComponenteComponent } from './alumno-detalles-componente/alumno-detalles-componente.component';
 import { AlumnosListaComponenteComponent } from './alumnos-lista-componente/alumnos-lista-componente.component';
 import { CursoDetallesComponenteComponent } from './curso-detalles-componente/curso-detalles-componente.component';
+import { CursosListaComponenteComponent } from './cursos-lista-componente/cursos-lista-componente.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CursoDetallesComponenteComponent } from './curso-detalles-componente/cu
     AgregarCursoComponenteComponent,
     AlumnoDetallesComponenteComponent,
     AlumnosListaComponenteComponent,
-    CursoDetallesComponenteComponent
+    CursoDetallesComponenteComponent,
+    CursosListaComponenteComponent
   ],
   imports: [
     BrowserModule

@@ -3,19 +3,18 @@ version: '3'
 services:
     dj:
         container_name: backend
-        build: .
-        command: python manage.py makemigrations
+        build: ./cursos_universitarios
         command: python manage.py migrate
         command: gunicorn cursos_universitarios.wsgi:application --bind 0.0.0.0:8080
         volumes: 
-            - .:/app
+            - ./cursos_universitarios:/app
         ports:
             - "8080:8080"
     ng:
         container_name: frontend
-        build: ../frontend/cursos-front
+        build: ./frontend/cursos-front
         volumes: 
-            - ../frontend/cursos-front:/app
+            - ./frontend/cursos-front:/app
         ports:
             - "8888:80"
         

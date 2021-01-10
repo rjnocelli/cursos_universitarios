@@ -10,7 +10,7 @@ export class ApiServiceService {
   constructor(private http: HttpClient) { }
 
   // url para conectar al api servido por la imagen Docker
-  baseUrl = "http://127.0.0.1/api/"
+  baseUrl = "http://127.0.0.1:8080/api/"
 
   // ulr para conectar al api en localhost
   // baseUrl = "http://127.0.0.1:8000/api/"

@@ -51,7 +51,7 @@ export class SuscripcionComponenteComponent implements OnInit {
         alert(`alumno suscripto`)
       },
       error => {
-        alert('ERROR!!!')
+        alert('ERROR!!')
         console.log(error)
       })
     this.suscribirAlumnoForm.reset();

@@ -48,7 +48,7 @@ export class CalificarAlumnoComponenteComponent implements OnInit {
       },
       error => {
         console.log(error)
-        alert(`ERROR!!! Prueba suscribir al alumno primero!`)
+        alert(`ERROR!!! Prueba suscribir al alumno primero! Calificacion debe ser entre 0 y 10`)
       })
     this.calificarAlumnoForm.reset();
     this.router.navigate([''])
